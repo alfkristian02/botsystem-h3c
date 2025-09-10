@@ -6,6 +6,7 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<meta name="robots" content="noindex, nofollow" />
 </svelte:head>
 
 {@render children?.()}
