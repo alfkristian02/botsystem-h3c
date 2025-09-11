@@ -31,6 +31,7 @@
     resize: none;
     width: 15rem;
     height: 5rem;
+    margin-top: 2rem;
   }
 
   button {

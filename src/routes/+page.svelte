@@ -11,7 +11,9 @@
   };
 </script>
 
-<h1>H3C - Botsystem</h1>
+<h1>H3C - Bøter</h1>
+
+<img src="img/cover.png" alt="cool stuff">
 
 <button onclick={toggleShowDialog} class="open-rules">?</button>
 
@@ -27,8 +29,15 @@
 
 <style>
   h1 {
-    text-align: center;
+    text-align: center; 
     margin-top: 4rem;
+  }
+
+  img {
+    width: 70vw;
+    border-radius: 5px;
+    display: block;
+    margin: auto;
   }
   
   .open-rules {

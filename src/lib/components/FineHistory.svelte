@@ -20,8 +20,21 @@
   });
 </script>
 
+<h2>Meldte bøter</h2>
+
 {#each history as entry}
-    <p>{entry}</p>
+    <li>{entry}</li>
 {/each}
 
 <!-- TODO: make pagination for this -->
+<style>
+  h2 {
+    text-align: center;
+    margin-top: 4rem;
+  }
+
+  li {
+    text-align: center;
+    margin-top: 2rem;
+  }
+</style>
