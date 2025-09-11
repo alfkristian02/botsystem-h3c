@@ -1,9 +1,8 @@
 <script lang="ts">
-  import { onMount, tick } from "svelte";
-  import { database } from "$lib/utils/firestore";
+  import { onMount } from "svelte";
   import { type Firestore, collection, getDocs } from "firebase/firestore/lite";
 
-  let { toggleShowDialog } = $props();
+  let { toggleShowDialog, database } = $props();
 
   let regler: Array<Rule> = $state([]);
 

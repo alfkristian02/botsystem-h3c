@@ -1,22 +1,22 @@
 <script lang="ts">
   import DialogBox from "$lib/components/DialogBox.svelte";
+  import FineHistory from "$lib/components/FineHistory.svelte";
+  import { database } from "$lib/utils/firestore";
 
   let showDialog: boolean = $state(false);
 
-  const noe = function toggleDialogBox() {
+  const toggleShowDialog = function toggleShowDialog() {
     showDialog = !showDialog;
-  }
-
+  };
 </script>
 
-<button
-  onclick={noe}
-  class="open-rules">?</button
->
+<button onclick={toggleShowDialog} class="open-rules">?</button>
 
 {#if showDialog}
-  <DialogBox toggleShowDialog={noe} />
+  <DialogBox {toggleShowDialog} {database}/>
 {/if}
+
+<FineHistory {database}/>
 
 <style>
   .open-rules {
@@ -34,6 +34,4 @@
   .open-rules:hover {
     background-color: rgb(241, 241, 241);
   }
-
-
 </style>
