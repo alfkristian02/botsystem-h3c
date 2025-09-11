@@ -31,7 +31,7 @@
 
 <div class="complete-overlay"></div>
 <div class="dialog-box">
-  <h2>Regler og straff for bøter</h2>
+  <h2>Botregler</h2>
   <br />
   {#each regler as rule}
     <span>

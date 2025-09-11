@@ -1,6 +1,7 @@
 <script lang="ts">
   import DialogBox from "$lib/components/DialogBox.svelte";
   import FineHistory from "$lib/components/FineHistory.svelte";
+  import InputBox from "$lib/components/InputBox.svelte";
   import { database } from "$lib/utils/firestore";
 
   let showDialog: boolean = $state(false);
@@ -10,24 +11,34 @@
   };
 </script>
 
+<h1>H3C - Botsystem</h1>
+
 <button onclick={toggleShowDialog} class="open-rules">?</button>
 
 {#if showDialog}
-  <DialogBox {toggleShowDialog} {database}/>
+  <DialogBox {toggleShowDialog} {database} />
 {/if}
 
-<FineHistory {database}/>
+<div class="input-box">
+  <InputBox {database} />
+</div>
+
+<FineHistory {database} />
 
 <style>
-  .open-rules {
-    border-radius: 100%;
-    padding: 10px;
+  h1 {
     text-align: center;
+    margin-top: 4rem;
+  }
+  
+  .open-rules {
     position: absolute;
-    right: 2rem;
-    top: 2rem;
-    height: 3rem;
-    width: 3rem;
+    border-radius: 100%;
+    right: 1rem;
+    top: 1rem;
+    height: 2rem;
+    width: 2rem;
+
     background-color: white;
   }
 
