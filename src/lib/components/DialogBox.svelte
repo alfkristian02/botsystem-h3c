@@ -1,32 +1,5 @@
 <script lang="ts">
-  import { onMount } from "svelte";
-  import { type Firestore, collection, getDocs } from "firebase/firestore/lite";
-
-  let { toggleShowDialog, database } = $props();
-
-  let regler: Array<Rule> = $state([]);
-
-  type Rule = {
-    description: string;
-    fine: number;
-  };
-
-  async function getRules(db: Firestore) {
-    const reglerCol = collection(db, "prikk_regler");
-    const reglerSnapshot = await getDocs(reglerCol);
-    const reglerList: Array<Rule> = reglerSnapshot.docs.map((doc) => {
-      let data = doc.data();
-      return {
-        description: data.regel,
-        fine: data.bot,
-      };
-    });
-    return reglerList;
-  }
-
-  onMount(async () => {
-    regler = await getRules(database);
-  });
+  let { toggleShowDialog, regler } = $props();
 </script>
 
 <div class="complete-overlay"></div>
