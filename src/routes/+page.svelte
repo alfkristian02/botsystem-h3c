@@ -42,13 +42,18 @@
   
   .open-rules {
     position: absolute;
-    border-radius: 100%;
+    border-radius: 50%;
     right: 1rem;
     top: 1rem;
-    height: 2rem;
-    width: 2rem;
+    height: 3rem;
+    width: 3rem;
 
     background-color: white;
+
+    font-size: 20px;
+    color: black;
+    border-style: solid;
+    border-color: black;
   }
 
   .open-rules:hover {

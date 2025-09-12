@@ -99,5 +99,10 @@
     border-radius: 15px;
     padding: 10px;
     font-size: 15px;
+    
+    color: black;
+
+    border-style: solid;
+    border-color: black;
   }
 </style>

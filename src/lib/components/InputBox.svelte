@@ -7,6 +7,8 @@
 
   // TODO: okey, this should be a util function or something, same goes for the reads in other components.
   async function handleWriteFine() {
+    if (value === "") return;
+
     await addDoc(collection(database, "prikk_melding"), {
       forklaring: value,
     });
@@ -36,5 +38,12 @@
 
   button {
     margin-top: 1rem;
+    border-radius: 5px;
+    font-size: 20px;
+    color: black;
+    padding: 8px;
+    background-color: white;
+    border-style: solid;
+    border-color: black;
   }
 </style>
