@@ -4,7 +4,7 @@
   import InputBox from "$lib/components/InputBox.svelte";
   import { database } from "$lib/utils/firestore";
   import { onMount } from "svelte";
-  import { type Firestore, collection, getDocs } from "firebase/firestore/lite";
+  import { type Firestore, collection, getDocs, query, orderBy } from "firebase/firestore/lite";
 
   type Rule = {
     description: string;
@@ -19,13 +19,17 @@
   };
 
   async function getRules(db: Firestore) {
-    const reglerCol = collection(db, "prikk_regler");
-    const reglerSnapshot = await getDocs(reglerCol);
+    const reglerCol = collection(db, "fine_rules");
+
+    const reglerQuery = query(reglerCol, orderBy("sort_order", "asc"));
+
+    const reglerSnapshot = await getDocs(reglerQuery);
+
     const reglerList: Array<Rule> = reglerSnapshot.docs.map((doc) => {
       let data = doc.data();
       return {
-        description: data.regel,
-        fine: data.bot,
+        description: data.rule,
+        fine: data.fine,
       };
     });
     return reglerList;
