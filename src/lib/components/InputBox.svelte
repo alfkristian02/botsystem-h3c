@@ -10,7 +10,8 @@
     if (value === "") return;
 
     await addDoc(collection(database, "prikk_melding"), {
-      forklaring: value,
+      explanation: value,
+      date: new Date()
     });
 
     value = "";
